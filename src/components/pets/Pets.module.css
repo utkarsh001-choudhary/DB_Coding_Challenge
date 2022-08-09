@@ -1,0 +1,8 @@
+.pets {
+    display: flex;
+    flex-direction: row; 
+    background-color: rgb(215, 250, 218);
+};
+.button{
+    color:antiquewhite;
+}

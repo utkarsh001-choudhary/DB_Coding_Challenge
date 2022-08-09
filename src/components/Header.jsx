@@ -12,7 +12,7 @@ import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import MenuItem from '@material-ui/core/MenuItem';
 import AdbIcon from '@material-ui/icons/Adb';
-
+import {Link} from "react-router-dom";
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = [ 'Logout'];
 
@@ -95,12 +95,14 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {
+            { <Link to="/matureBonds">
+
               <Button
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 Maturing Bonds
               </Button>
+            </Link>
             }
           </Box>
 

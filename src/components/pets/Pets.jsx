@@ -26,9 +26,9 @@ export const Pets = () => {
         <Table sx={{ minWidth: 600 }} size="small" aria-label="a dense table">
           <TableHead>
             <TableRow>
-              <TableCell align="center">PET ID</TableCell>
-              <TableCell align="right">PET NAME</TableCell>
-              <TableCell align="right">PET AGE</TableCell>
+              <TableCell align="center">BOOK ID</TableCell>
+              <TableCell align="right">BOOK NAME</TableCell>
+              {/* <TableCell align="right">PET AGE</TableCell> */}
               <TableCell align="center">Details</TableCell>
             </TableRow>
           </TableHead>
@@ -42,7 +42,7 @@ export const Pets = () => {
                   {pet.id}
                 </TableCell>
                 <TableCell align="right">{pet.name}</TableCell>
-                <TableCell align="right">31</TableCell>
+                {/* <TableCell align="right">31</TableCell> */}
                 <TableCell align="center">
                 <Link to="/show">
                   <Button

@@ -1,75 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
 import Header from "../Header";
 import Trades from "./Trades";
+import { findTrades } from "../../services/Trades";
 
 const Book = () => {
 
 	const navigate = useNavigate();
 	const location = useLocation();
+	const [trades, setTrades] = useState([]);
 
 	useEffect(() => {
 		if (!location.state.id) { 
 			navigate("/books")
 		}
-		console.log("Location: ", location.state);
+		// console.log("Location: ", location.state);
+		findTrades().then(({ data }) => {
+            setTrades(data);
+      });
 	}, [])
 	
-
-	const trades = [
-	{
-		id: 1,
-		BookId: 1,
-		CounterPartyId: 1,
-		SecurityId: 1,
-		SecurityIssuer: "Adani",
-		Quantity: 5,
-		Status: "Settled",
-		Price: 9,
-		Buy_Sell: "Buy",
-		TradeDate: "09082022",
-		SettlementDate: "09082022",
-	},
-	{
-		id: 2,
-		BookId: 1,
-		CounterPartyId: 1,
-		SecurityId: 3,
-		SecurityIssuer: "Reliance",
-		Quantity: 5,
-		Status: "Settled",
-		Price: 4,
-		Buy_Sell: "Sell",
-		TradeDate: "09082022",
-		SettlementDate: "09082022",
-	},
-	{
-		id: 3,
-		BookId: 1,
-		CounterPartyId: 1,
-		SecurityId: 2,
-		SecurityIssuer: "NTPC",
-		Quantity: 5,
-		Status: "Settled",
-		Price: 1,
-		Buy_Sell: "Sell",
-		TradeDate: "09082022",
-		SettlementDate: "09082022",
-	},
-	{
-		id: 4,
-		BookId: 1,
-		CounterPartyId: 1,
-		SecurityId: 4,
-		SecurityIssuer: "Apple",
-		Quantity: 5,
-		Status: "Settled",
-		Price: 14,
-		Buy_Sell: "Buy",
-		TradeDate: "09082022",
-		SettlementDate: "09082022",
-	}
-	];
+	// useEffect(() => {
+	// 	console.log("Trades: ", trades);
+	// }, [trades])
 
 	return (
 		<>
@@ -87,7 +40,7 @@ const Book = () => {
 					<Trades data={trades.filter(item => item.BookId == location.state.id)} />
 				</Tab>
 			</Tabs> */}
-			<Trades data={trades.filter(item => item.BookId == location.state.id)} />
+			<Trades data={trades.filter(item => item.bookId == location.state.id)} />
 		</>
  	)
 };

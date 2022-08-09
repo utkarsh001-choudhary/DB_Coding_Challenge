@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import {Form, Button} from 'react-bootstrap';
 
 const Login = () => {
+
+	const navigate = useNavigate();
 
 	const [user, setUser] = useState("");
 	const [pass, setPass] = useState("");
@@ -17,6 +20,7 @@ const Login = () => {
 	const verifyUserPass = () => {
 		console.log("User: ", user);
 		console.log("Pass: ", pass);
+		navigate("/books");
 	}
 
 	return (

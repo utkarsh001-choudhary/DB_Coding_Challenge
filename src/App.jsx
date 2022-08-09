@@ -14,15 +14,12 @@ const App = () => {
   // return <Pets/>
   <Router history={history}>
          <Routes>
-           <Route exact path="/" element={<Login />} />
-           <Route exact path="/books" element={<Books/>} />
+           <Route exact path="/" element={<Books />} />
+           <Route exact path="/login" element={<Login/>} />
             {/* specific details page */}
-<<<<<<< HEAD
-            <Route exact path="/show" element={<Dummy/>} />
+            {/* <Route exact path="/show" element={<Dummy/>} /> */}
             <Route excat path="/matureBonds" element={<MatureBonds/>}></Route>
-=======
             <Route exact path="/book" element={<Book/>} />
->>>>>>> 43fcd3ec922d3b93e721d80b7440ffb271fc08c7
          </Routes>
      </Router>
   )

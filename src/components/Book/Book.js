@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
 import Header from "../Header";
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
 import Trades from "./Trades";
-import Securities from "./Securities";
 
 const Book = () => {
 
@@ -61,7 +58,7 @@ const Book = () => {
 	},
 	{
 		id: 4,
-		BookId: 2,
+		BookId: 1,
 		CounterPartyId: 1,
 		SecurityId: 4,
 		SecurityIssuer: "Apple",
@@ -74,57 +71,11 @@ const Book = () => {
 	}
 	];
 
-	const securities = [
-	{
-		Id: 1,
-		BookId: 2,
-		ISIN: "IN8364U01019",
-		Issuer: "Adani",
-		MaturityDate: "25-Mar-2025",
-		Coupon: 8.49,
-		Type: "Regular",
-		FaceValue: 12.5,
-		Status: "Active"
-	},
-	{
-		Id: 2,
-		BookId: 1,
-		ISIN: "IN8364U05359",
-		Issuer: "NTPC",
-		MaturityDate: "25-Feb-2023",
-		Coupon: 6.8,
-		Type: "Regular",
-		FaceValue: 7.2,
-		Status: "Active"
-	},
-	{
-		Id: 3,
-		BookId: 1,
-		ISIN: "IN8364U07821",
-		Issuer: "Reliance",
-		MaturityDate: "25-Aug-2023",
-		Coupon: 3.12,
-		Type: "Regular",
-		FaceValue: 10.1,
-		Status: "Active"
-	},
-	{
-		Id: 4,
-		BookId: 1,
-		ISIN: "IN8364U01010",
-		Issuer: "Apple",
-		MaturityDate: "25-Oct-2022",
-		Coupon: 12.86,
-		Type: "Regular",
-		FaceValue: 14.49,
-		Status: "Active"
-	}
-	]
-
 	return (
 		<>
 			<Header />
-			<Tabs
+			<h1 style={{margin: "1rem"}}>{ location.state.name }</h1>
+			{/* <Tabs
 				defaultActiveKey="securities"
 				className="mb-3"
 				fill
@@ -133,10 +84,10 @@ const Book = () => {
 					<Securities data={securities.filter(item => item.BookId == location.state.id)} />
 				</Tab>
 				<Tab eventKey="trades" title="Trades">
-					{/* <h1>Hello</h1> */}
 					<Trades data={trades.filter(item => item.BookId == location.state.id)} />
 				</Tab>
-			</Tabs>
+			</Tabs> */}
+			<Trades data={trades.filter(item => item.BookId == location.state.id)} />
 		</>
  	)
 };

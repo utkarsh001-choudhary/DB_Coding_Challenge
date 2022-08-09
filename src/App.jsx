@@ -17,12 +17,8 @@ const App = () => {
            <Route exact path="/" element={<Login />} />
            <Route exact path="/books" element={<Books/>} />
             {/* specific details page */}
-<<<<<<< HEAD
-            <Route exact path="/show" element={<Dummy/>} />
-            <Route excat path="/matureBonds" element={<MatureBonds/>}></Route>
-=======
             <Route exact path="/book" element={<Book/>} />
->>>>>>> 43fcd3ec922d3b93e721d80b7440ffb271fc08c7
+            <Route excat path="/matureBonds" element={<MatureBonds/>}></Route>
          </Routes>
      </Router>
   )

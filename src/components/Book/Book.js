@@ -13,7 +13,7 @@ const Book = () => {
 
 	useEffect(() => {
 		if (!location.state.id) { 
-			navigate("/")
+			navigate("/books")
 		}
 		console.log("Location: ", location.state);
 	}, [])

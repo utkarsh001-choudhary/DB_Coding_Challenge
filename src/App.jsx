@@ -14,8 +14,8 @@ const App = () => {
   // return <Pets/>
   <Router history={history}>
          <Routes>
-           <Route exact path="/" element={<Books />} />
-           <Route exact path="/login" element={<Login/>} />
+           <Route exact path="/" element={<Login />} />
+           <Route exact path="/books" element={<Books/>} />
             {/* specific details page */}
 <<<<<<< HEAD
             <Route exact path="/show" element={<Dummy/>} />

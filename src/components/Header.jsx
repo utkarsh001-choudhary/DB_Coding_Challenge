@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import MenuItem from '@material-ui/core/MenuItem';
 import AdbIcon from '@material-ui/icons/Adb';
+ import {Link} from "react-router-dom";
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = [ 'Logout'];
@@ -39,7 +40,10 @@ const ResponsiveAppBar = () => {
     <AppBar position="static" style={{backgroundColor:"#76b5c5"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <Link to="/books">
+
+          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} style={{color : "white"}}  />
+        </Link>
           <Typography
             variant="h6"
             noWrap
@@ -95,12 +99,16 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {
+            { 
+               <Link to ="/matureBonds">
               <Button
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >
+                style={{leftMargin : 1000 }}
+              > 
                 Maturing Bonds
               </Button>
+               </Link>
+                
             }
           </Box>
 

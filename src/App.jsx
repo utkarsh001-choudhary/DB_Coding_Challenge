@@ -43,7 +43,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Login handleLogin={handleLogin} error={error}/>} />
           <Route exact path="/books" element={<Books />} />
-          <Route excat path="/matureBonds" element={<MatureBonds/>}></Route>
+          <Route excat path="/matureBonds" element={<MatureBonds />} />
           <Route exact path="/book" element={<Book/>} />
         </Routes>
     </Router>

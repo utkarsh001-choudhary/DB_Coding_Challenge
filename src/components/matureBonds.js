@@ -14,7 +14,7 @@ import {findBonds} from "../services/Bonds";
 const MatureBonds=()=>{
     const dates = ["2023-09-12", "2022-08-10", "2022-06-17"];
     const [bonds, setBonds] = useState([]);
-
+   console.log("Matureeee");
     useEffect(() => {
         findBonds().then(({ data }) => {
             setBonds(data);

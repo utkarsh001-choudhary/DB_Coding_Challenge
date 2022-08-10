@@ -5,16 +5,20 @@ import {useNavigate} from 'react-router-dom';
 
 function Login({handleLogin,error}) {
     const [details, setDetails] = useState({name:"", email:"",password:""});
-    
+    const navigate = useNavigate();
+
     const submitHandler = e => {
         e.preventDefault();
 
-        handleLogin(details);
+        if (handleLogin(details)) {
+            navigateToHome();
+        }
     }
-	const navigate = useNavigate();
+	
   	const navigateToHome =() => {
-    navigate('/books');
-  	}
+        navigate('/books');
+    }
+    
     return(
 		<div className={styles.wrapper}>
         <form onSubmit={submitHandler} className={styles.form}>
@@ -35,7 +39,7 @@ function Login({handleLogin,error}) {
                 </div>
 				{/* <button onClick={navigateToHome} value="LOGIN"/> */}
 				
-                <input type="submit" onClick={navigateToHome} value="LOGIN" />
+                <input type="submit" onClick={submitHandler} value="LOGIN" />
             </div>
         </form>
 		</div>

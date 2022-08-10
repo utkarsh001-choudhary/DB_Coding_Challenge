@@ -5,7 +5,7 @@ import { history } from "./History";
 import Book from "./components/Book/Book";
 import Login from "./components/Auth/Login";
 import MatureBonds from "./components/matureBonds";
- import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
 
@@ -26,9 +26,11 @@ const App = () => {
         name: details.name,
         email: details.email
       });
+      return true;
     } else {
       console.log("Details do not match!");
       setError("Details do not match!");
+      return false;
     }
   }
 

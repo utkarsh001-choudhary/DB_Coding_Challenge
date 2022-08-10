@@ -28,18 +28,6 @@ const Book = () => {
 		<>
 			<Header />
 			<h1 style={{margin: "1rem"}}>{ location.state.name }</h1>
-			{/* <Tabs
-				defaultActiveKey="securities"
-				className="mb-3"
-				fill
-			>
-				<Tab eventKey="securities" title="Securities">
-					<Securities data={securities.filter(item => item.BookId == location.state.id)} />
-				</Tab>
-				<Tab eventKey="trades" title="Trades">
-					<Trades data={trades.filter(item => item.BookId == location.state.id)} />
-				</Tab>
-			</Tabs> */}
 			<Trades data={trades.filter(item => item.bookId == location.state.id)} />
 		</>
  	)
